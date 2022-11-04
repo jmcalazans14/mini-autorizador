@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.google.gson.annotations.Expose;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,11 +15,16 @@ import lombok.Setter;
 @Component
 public class CartaoModel {
 
+    @Expose
     @ApiModelProperty(value = "Número do Cartão")
     Long numeroCartao;    
 
+    @Expose
     @ApiModelProperty(value = "Senha do cartão")
-    int senhaCartao;
+    int senha;
+    
+    @ApiModelProperty(value = "Saldo do cartão")
+    double saldo;
 
     @ApiModelProperty(value = "Lista de compras")
     List<CompraModel> listCompras;
